@@ -1,50 +1,69 @@
 package main.java.com.example.tutioncenter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Student {
     // data/attributes
-    Name name;
-    String kp;
-    String address;
-    String schoolname;
-    float marks[] = new float[5];
+    private Name name;
+    private String ic;
+    private String address;
+    private int year;
+    private String schoolname;
+    private List<Float> marks;
 
-    // methods or operations
-    float calcAvg() {
-        return 0;
+
+    //CONSTRUCTORS
+    public Student(String ic, int year, String schoolname) {
+        this.ic = ic;
+        this.year = year;
+        this.schoolname = schoolname;
+        this.marks = new ArrayList<>();
     }
 
-    float calcMin() {
-        return 0;
-    }
 
-    void setName(Name name) {
+    //OPERATIONS
+    public void setName(Name name) {
         this.name = name;
     }
-
-    void setMark(float mark, int i) throws Exception {
-        if (mark < 0)
-            throw new Exception("Error in mark detected");
-        marks[i] = mark;
+    public Name getName() {
+        return name;
     }
 
-    void displayMarks() {
-        // print the marks
-        for (int i = 0; i < marks.length; i++) {
-            System.out.println("marks at index " + i + " :" + marks[i]);
-        }
+    public void setIc(String ic) {
+        this.ic = ic;
+    }
+    public String getIc() {
+        return ic;
     }
 
-    public static void main(String args[]) {
-        Student stud0 = new Student();
-        try {  // try block.. something in here can cause exception
-            stud0.setMark(10, 0);
-            stud0.setMark(-10, 1);
-        } catch (Exception ex) {  // catch block.. action to be taken
-            // in case of Exception
-            System.out.println("Cannot continue");
-            ex.printStackTrace();
-        }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public String getAddress() {
+        return address;
+    }
 
-        stud0.displayMarks();
+    public void setYear(int year) {
+        this.year = year;
+    }
+    public int getYear(){
+        return year;
+    }
+
+    public void setSchoolname (String schoolname) {
+        this.schoolname = schoolname;
+    }
+    public String getSchoolname () {
+        return schoolname;
+    }
+
+    public void addMarks(float mark) {
+        marks.add(mark);
+    }
+    public void removeMarks(float mark) {
+        marks.remove(mark);
+    }
+    public List<Float> getMarks() {
+        return marks;
     }
 }

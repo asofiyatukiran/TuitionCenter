@@ -1,47 +1,45 @@
 package main.java.com.example.tutioncenter;
 
 public class Name {
+    //DATA
     private String fname;
-    private String lname;
     private String mname;
+    private String lname;
 
-    public Name() {
-        this.fname = "fname";
-        this.lname = "lname";
-        this.mname = "mname";
-
-    }
-
-    public Name(String fname, String lname, String mname) {
+    //CONSTRUCTORS
+    public Name(String fname, String mname, String lname) {
         this.fname = fname;
-        this.lname = lname;
         this.mname = mname;
+        this.lname = lname;
     }
+
+
+//OPERATIONS
 
     public void setFName(String fname) {
         // "this" refers to the class attributes
         this.fname = fname;
     }
-
     public void setMName(String mname) {
         // "this" refers to the class attributes
         this.mname = mname;
     }
-
     public void setLName(String lname) {
         // "this" refers to the class attributes
         this.lname = lname;
     }
 
-    public String getFname() {
+    public String getMName() {
         return fname;
     }
-
-    public String getLname() {
+    public String getFName() {
+        return fname;
+    }
+    public String getLName() {
         return lname;
     }
 
-    public String getMname() {
-        return mname;
+    public String getFullName() {
+        return fname +" "+ mname +" "+ lname;
     }
 }
